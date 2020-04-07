@@ -100,12 +100,12 @@
 
 * _Controllers_ provides all of the necessary [endpoints](https://en.wikipedia.org/wiki/Web_API#Endpoints) to access and manipulate respective io.zipcoder.tc_spring_poll_application.domain objects.
 	*  REST resources are identified using URI endpoints.
-* Create a sub package of `io.zipcoder.tc_spring_poll_application` named `controller`.
+* Create a sub package of `io.zipcoder.tc_spring_poll_application` named `io.zipcoder.tc_spring_poll_application.controller`.
 
 
 ## Part 3.1 - Create class `PollController`
 
-* Create a `PollController` class in the `controller` sub package.
+* Create a `PollController` class in the `io.zipcoder.tc_spring_poll_application.controller` sub package.
 	* `PollController` signature should be `annotated` with `@RestController`
 
 * `PollController` has a `pollRepository` instance variable of type `PollRepository`  
@@ -444,7 +444,7 @@ public class ComputeResultController {
 ```
 
 
-* We inject an instance of `VoteRepository` into the controller, which is used to retrieve votes for a given poll.
+* We inject an instance of `VoteRepository` into the io.zipcoder.tc_spring_poll_application.controller, which is used to retrieve votes for a given poll.
 * The `computeResult` method takes `pollId` as its parameter.
 * The `@RequestParam` annotation instructs Spring to retrieve the `pollId` value from a HTTP query parameter.
 * The computed results are sent to the client using a newly created instance of `ResponseEntity`.
@@ -491,7 +491,7 @@ Fields (Don't forget to provide getters and setters):
 
 ## Part 5.4 - Create a `@ControllerAdvice`
 
-In this section we add custom handling for the exceptions we created before. A `@ControllerAdvice` is an AOP feature that wraps a controller and adds some functionality when needed. In this case we are adding functionality only when an exception is thrown.
+In this section we add custom handling for the exceptions we created before. A `@ControllerAdvice` is an AOP feature that wraps a io.zipcoder.tc_spring_poll_application.controller and adds some functionality when needed. In this case we are adding functionality only when an exception is thrown.
 
 - Create RestExceptionHandler class annotated with `@ControllerAdvice`
 - Create a handler method with the header shown below
@@ -513,7 +513,7 @@ Now it's time to make sure that all objects persisted to the database actually c
 - In the `Poll` class:
   - `options` should be `@Size(min=2, max = 6)`
   - `question` should be `@NotEmpty`
-- To enforce these validations, add `@Valid` annotations to Poll objects in `RequestMapping`-annotated controller methods (there should be 2)
+- To enforce these validations, add `@Valid` annotations to Poll objects in `RequestMapping`-annotated io.zipcoder.tc_spring_poll_application.controller methods (there should be 2)
 
 ## Part 5.5 - Customizing validation errors
 
