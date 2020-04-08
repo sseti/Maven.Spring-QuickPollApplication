@@ -76,24 +76,24 @@
 * _Repositories_ or [Data Access Objects (DAO)](https://en.wikipedia.org/wiki/Data_access_object), provide an abstraction for interacting with _datastores_.
 * Typically DAOs include an interface that provides a set of finder methods such as `findById`, `findAll`, for retrieving data, and methods to persist and delete data.
 * It is customary to have one `Repository` per `io.zipcoder.tc_spring_poll_application.domain` object.
-* Create a sub-package of `io.zipcoder.tc_spring_poll_application` named `repositories`.
+* Create a sub-package of `io.zipcoder.tc_spring_poll_application` named `io.zipcoder.tc_spring_poll_application.repositories`.
 
 
 ## Part 2.1 - Create interface `OptionRepository`
 
-* Create an `OptionRepository` interface in the `repositories` subpackage.
+* Create an `OptionRepository` interface in the `io.zipcoder.tc_spring_poll_application.repositories` subpackage.
 * `OptionRepository` is a subclass of `CrudRepository<Option, Long>`
 
 
 ## Part 2.2 - Create interface `PollRepository`
 
-* Create a `PollRepository` interface in the `repositories` subpackage.
+* Create a `PollRepository` interface in the `io.zipcoder.tc_spring_poll_application.repositories` subpackage.
 * `PollRepository` is a subclass of `CrudRepository<Poll, Long>`
 
 
 ## Part 2.3 - Create interface `VoteRepository`
 
-* Create a `VoteRepository` interface in the `repositories` subpackage.
+* Create a `VoteRepository` interface in the `io.zipcoder.tc_spring_poll_application.repositories` subpackage.
 * `VoteRepository` is a subclass of `CrudRepository<Vote, Long>`
 
 # Part 3 - Controller Implementation
